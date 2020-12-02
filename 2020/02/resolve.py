@@ -5,7 +5,7 @@ DATA = ['3-4 j: tjjj', '7-10 h: nhhhhhgghphhh', '7-13 j: tpscbbstbdjsjbtcpj', '4
 def parse(d):
     return d.split(' ')
 
-def is_valid(rng, ltt, pwd):
+def is_valid_problem_1(rng, ltt, pwd):
     min, max = rng.split('-')
     to_find=ltt.replace(':', '')
     total = 0
@@ -14,11 +14,37 @@ def is_valid(rng, ltt, pwd):
             total=total+1
     return total >= int(min) and total <= int(max)
 
-if __name__ == "__main__":
+def is_valid_problem_2(rng, ltt, pwd):
+    one, two = rng.split('-')
+    to_find=ltt.replace(':', '')
+    occurrence=0
+    i = 1
+    for p in pwd:
+        if (int(one) == i or int(two) == i) and p == to_find:
+            occurrence=occurrence+1
+        i=i+1
+
+    return occurrence==1
+
+
+def part_one():
+    print("part 1")
     ok = 0
     for d in DATA:
         rng, ltt, pwd = parse(d)
-        if is_valid(rng, ltt, pwd):
+        if is_valid_problem_1(rng, ltt, pwd):
             ok=ok+1
-
     print(ok)
+
+def part_two():
+    print("\npart 2")
+    ok = 0
+    for d in DATA:
+        rng, ltt, pwd = parse(d)
+        if is_valid_problem_2(rng, ltt, pwd):
+            ok=ok+1
+    print(ok)
+
+if __name__ == "__main__":
+    part_one()
+    part_two()
