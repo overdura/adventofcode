@@ -3,7 +3,10 @@ use python3
 https://adventofcode.com/2020/day/1
 
 # results
-- 1: 1209*811 = 980499
+```
+1: 1209*811 = 980499
+2: 1198*373*449 = 200637446
+```
 
 # input
 ```

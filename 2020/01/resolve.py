@@ -23,5 +23,29 @@ def part_one():
     print(result)
     print("--")
 
+def part_two():
+    print("\n")
+    print("part 2")
+    end_data=len(DATA)
+    i=1
+    result=None
+    for d in DATA:
+        for r in range(i, end_data):
+            if not is_2020(d, DATA[r]) and result == None:
+                partial_result = d + DATA[r]
+                for rb in range(0, end_data):
+                    if rb != i and rb != i+1:
+                        if is_2020(partial_result, DATA[rb]):
+                            print(d, DATA[r], DATA[rb])
+                            result=d*DATA[r]*DATA[rb]
+                            break
+        if result!=None:
+            break
+        i=i+1
+    print("--")
+    print(result)
+    print("--")
+
 if __name__ == "__main__":
     part_one()
+    part_two()
