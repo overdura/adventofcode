@@ -1,6 +1,13 @@
 use python3
 # problem 2
 https://adventofcode.com/2020/day/2
+
+# results
+```
+1: 483
+2: 482
+```
+
 # input
 ```
 3-4 j: tjjj
