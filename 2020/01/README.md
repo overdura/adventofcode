@@ -1,6 +1,10 @@
 use python3
-# problem 1
+# problem 1 (two parts)
 https://adventofcode.com/2020/day/1
+
+# results
+- 1: 1209*811 = 980499
+
 # input
 ```
 1706

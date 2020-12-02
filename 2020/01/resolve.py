@@ -5,11 +5,12 @@ DATA = [1706, 1466, 1427, 1744, 1684, 1386, 2001, 1750, 1753, 1770, 1559, 1616, 
 def is_2020(a, b):
     return (a+b)==2020
 
-if __name__ == "__main__":
+def part_one():
+    print("part 1")
     end_data=len(DATA)
     result=None
+    i=1
     for d in DATA:
-        i=1
         for r in range(i, end_data):
             if is_2020(d, DATA[r]):
                 print(d, DATA[r])
@@ -18,4 +19,9 @@ if __name__ == "__main__":
         if result!=None:
             break
         i=i+1
+    print("--")
     print(result)
+    print("--")
+
+if __name__ == "__main__":
+    part_one()
