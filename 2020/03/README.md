@@ -4,7 +4,8 @@ https://adventofcode.com/2020/day/3
 
 # results
 ```
-214
+1: 214
+2: 8336352024
 ```
 
 # input
