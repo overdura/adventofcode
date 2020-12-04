@@ -328,7 +328,7 @@ LAST_COL_IX=30
 RIGHT_MOVEMENT=3
 TREE='#'
 
-def data_to_arr():
+def data_to_arr_brute_force():
     arr=[]
     arr_in = []
     for d in DATA:
@@ -338,12 +338,23 @@ def data_to_arr():
             arr_in=[]
     arr.append(arr_in*55)
     return arr
-
+'''
+def data_to_arr():
+    arr=[]
+    arr_in = []
+    for d in DATA:
+        arr_in.append(d)
+        if d == '\n':
+            arr.append(arr_in[0:-1])
+            arr_in=[]
+    arr.append(arr_in)
+    return arr
+'''
 def is_tree(d):
     return d==TREE
 
-if __name__ == "__main__":
-    arr = data_to_arr()
+def problem_one():
+    arr = data_to_arr_brute_force()
     nxt=0
     down=False
     total=0
@@ -362,3 +373,20 @@ if __name__ == "__main__":
             i=i+1
     print("--")
     print(total)
+
+def problem_one_alternative():
+    arr = data_to_arr_brute_force()
+    #i=0
+    total=0
+    arr.pop(0)
+    i=3
+    for a in arr:
+        if is_tree(a[i]):
+            total=total+1
+        i=i+3
+    print(total)
+
+if __name__ == "__main__":
+    problem_one()
+    print("\n")
+    problem_one_alternative()
