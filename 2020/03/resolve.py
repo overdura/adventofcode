@@ -324,6 +324,7 @@ DATA = '''......#..........##......#.####
 .......#.#....#............#..#
 .#..##.#.######...#...#......#.'''
 
+COLUMN_LIMIT=30
 EXTEND_LINE=150
 TREE='#'
 
@@ -389,7 +390,11 @@ def problem_one_alternative_2():
     total=0
     arr.pop(0)
     i=3
+    multpl=1
     for a in arr:
+        if i>COLUMN_LIMIT:
+            multpl=multpl+1
+        a=a*multpl
         if is_tree(a[i]):
             total=total+1
         i=i+3
@@ -426,13 +431,11 @@ def problem_two():
             if is_tree(ar[e]):
                 total_e=total_e+1
             e=e+1
-
         i=i+1
     print(total_a*total_b*total_c*total_d*total_e)
 
-
 if __name__ == "__main__":
     #problem_one()
-    #print("\n")
-    problem_one_alternative()
+    #problem_one_alternative()
+    problem_one_alternative_2()
     problem_two()
