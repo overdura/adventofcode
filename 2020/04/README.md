@@ -5,6 +5,7 @@ https://adventofcode.com/2020/day/4
 # results
 ```
 1: 192
+2: 101
 ```
 
 # input
