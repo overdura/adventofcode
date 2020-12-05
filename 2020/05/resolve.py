@@ -58,6 +58,25 @@ def problem_one():
             result = seat_id
     print("p1: "+ str(result))
 
+def problem_two():
+    lines = read_file()
+    seats = []
+    for l in lines:
+        line=l.replace('\n','')
+        row=get_row(line[0:7])
+        column=get_column(line[7:10])
+        seat_id=get_seat_id(row, column)
+        seats.append(seat_id)
+    seats.sort()
+    i=seats[0]
+    for s in seats:
+        if s!=i: # break order, previously id is ok
+            result=s-1
+            break
+        i=i+1
+    print("p2: "+ str(result))
+
 
 if __name__ == "__main__":
     problem_one()
+    problem_two()
