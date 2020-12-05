@@ -6,7 +6,8 @@ https://adventofcode.com/2020/day/5
 
 # results
 ```
-1:
+1: 866
+2: 
 ```
 
 # input
