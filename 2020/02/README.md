@@ -1,6 +1,8 @@
 use python3
 # problem 2
 https://adventofcode.com/2020/day/2
+1: How many passwords are valid according to their policies?
+2: How many passwords are valid according to the new interpretation of the policies?
 
 # results
 ```
