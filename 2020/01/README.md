@@ -1,6 +1,8 @@
 use python3
 # problem 1 (two parts)
 https://adventofcode.com/2020/day/1
+1: Of course, your expense report is much larger. Find the two entries that sum to 2020; what do you get if you multiply them together?
+2: In your expense report, what is the product of the three entries that sum to 2020?
 
 # results
 ```

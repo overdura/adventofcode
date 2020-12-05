@@ -1,6 +1,8 @@
 use python3
-# problem 2
+# problem 4
 https://adventofcode.com/2020/day/4
+1: Count the number of valid passports - those that have all required fields. Treat cid as optional. In your batch file, how many passports are valid?
+2: Count the number of valid passports - those that have all required fields and valid values. Continue to treat cid as optional. In your batch file, how many passports are valid?
 
 # results
 ```

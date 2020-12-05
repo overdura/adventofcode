@@ -1,6 +1,8 @@
 use python3
-# problem 2
+# problem 3
 https://adventofcode.com/2020/day/3
+1: Starting at the top-left corner of your map and following a slope of right 3 and down 1, how many trees would you encounter?
+2: What do you get if you multiply together the number of trees encountered on each of the listed slopes?
 
 # results
 ```
