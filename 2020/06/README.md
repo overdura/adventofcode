@@ -1,13 +1,13 @@
 use python3
-# problem 5
+# problem 6
 https://adventofcode.com/2020/day/6
-1: What is the sum of those counts?
-2:
+1: For each group, count the number of questions to which anyone answered "yes". What is the sum of those counts?
+2: For each group, count the number of questions to which everyone answered "yes". What is the sum of those counts?
 
 # results
 ```
 1: 6768
-2:
+2: 3489
 ```
 
 # input
