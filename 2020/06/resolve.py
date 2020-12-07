@@ -1,6 +1,4 @@
 # -*- coding: utf-8 -*-
-import math
-
 DATA_FILE='data.in'
 
 def read_file():
