@@ -2,12 +2,12 @@ use python3
 # problem 7
 https://adventofcode.com/2020/day/7
 1: How many bag colors can eventually contain at least one shiny gold bag? (The list of rules is quite long; make sure you get all of it.)
-2:
+2: How many individual bags are required inside your single shiny gold bag?
 
 # results
 ```
 1: 257
-2:
+2: 1038
 ```
 
 # input
