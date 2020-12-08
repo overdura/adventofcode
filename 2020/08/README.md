@@ -2,12 +2,12 @@ use python3
 # problem 8
 https://adventofcode.com/2020/day/8
 1: Run your copy of the boot code. Immediately before any instruction is executed a second time, what value is in the accumulator?
-2:
+2: Fix the program so that it terminates normally by changing exactly one jmp (to nop) or nop (to jmp). What is the value of the accumulator after the program terminates?
 
 # results
 ```
 1: 1859
-2:
+2: 1235
 ```
 
 # input
