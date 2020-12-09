@@ -2,12 +2,12 @@ use python3
 # problem 9
 https://adventofcode.com/2020/day/9
 1: The first step of attacking the weakness in the XMAS data is to find the first number in the list (after the preamble) which is not the sum of two of the 25 numbers before it. What is the first number that does not have this property?
-2:
+2: What is the encryption weakness in your XMAS-encrypted list of numbers?
 
 # results
 ```
 1: 3199139634
-2:
+2: 438559930
 ```
 
 # input
