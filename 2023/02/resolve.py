@@ -45,9 +45,9 @@ def get_valid_game(line):
         return 0
 
 def get_max_value(value, previous_value):
-    number_value = int(value.strip().split(" ")[0])
+    number_value = int(value.split(" ")[0])
     return number_value if number_value > previous_value else previous_value
-    
+
 def get_power_game(data):
     red = 0
     green = 0
@@ -69,15 +69,15 @@ def part_one():
     valid_games = 0
     for line in lines:
         valid_games += get_valid_game(line)
-    print("PART ONE sum IDs: ", valid_games)
+    print("PART ONE sum IDs:", valid_games)
 
 def part_two():
     lines = read_file()
     sum_power = 0
     for line in lines:
-        cubes = line.split(':')[1]
+        cubes = line.split(': ')[1]
         sum_power += get_power_game(cubes)
-    print("PART TWO sum of the power: ", sum_power)
+    print("PART TWO sum of the power:", sum_power)
 
 
 if __name__ == "__main__":

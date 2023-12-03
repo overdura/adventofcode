@@ -37,8 +37,7 @@ def part_one():
     calibration_value = 0
     for line in lines:
         calibration_value += get_individual_calibration_value(line)
-    print("PART ONE calibration value: ", calibration_value)
-
+    print("PART ONE calibration value:", calibration_value)
 
 def part_two():
     lines = read_file(DATA_FILE_2)
@@ -46,7 +45,7 @@ def part_two():
     for line in lines:
         final_line = convert_letters_to_numbers(line)
         calibration_value += get_individual_calibration_value(final_line)
-    print("PART TWO calibration value: ", calibration_value)
+    print("PART TWO calibration value:", calibration_value)
 
 
 if __name__ == "__main__":
