@@ -63,7 +63,6 @@ def get_ordered_map_rank_bid(map):
     return ordered_rank_bid
 
 def get_ordered_bids(bids, cards_strenght):
-    # sum elements and compared
     strengths_bids = {}
     for bid in bids:
         strenght = ""
@@ -73,7 +72,6 @@ def get_ordered_bids(bids, cards_strenght):
                 ix = '0'+ix
             strenght += ix
         strengths_bids[bid] = strenght
-    
     ordered = dict(sorted(strengths_bids.items(), key=lambda item: item[1], reverse = True))
     return ordered
 
@@ -113,7 +111,7 @@ def part_one():
     # reorder map to rank - bids
     ordered_rank_bid = get_ordered_map_rank_bid(map_rank_bid)
     bid_2_rank = calculate_ranks(ordered_rank_bid, len(hands_ranks), CARDS_STRENGHT)
-
+    
     for bid, rank in hands.items():
         total_winnings += rank * bid_2_rank[bid]
     print("PART ONE total winnings:", total_winnings)
@@ -123,10 +121,25 @@ def part_two():
     hands = hands_with_joker(get_hands())
     hands_ranks = {}
     for bid in hands.keys():
-        bid_replace_joker = bid.split("-")[1]
         bid_no_joker =  bid.split("-")[0]
+        bid_replace_joker = bid.split("-")[1]
         hands_ranks[bid_no_joker] = hand_type(bid_replace_joker)
-    print("PART TWO  total winnings:",  total_winnings)
+
+    # 1 {'QQQJA': 5, 'T55J5': 4, 'KK677': 3, 'KTJJT': 2, '32T3K': 1}
+    # 2 {'KTJJT': 5, 'QQQJA': 4, 'T55J5': 3, 'KK677': 2, '32T3K': 1}
+    # order ranks, ONLY bid - unique rank
+    map_rank_bid = get_map_ranks_bids(hands_ranks)
+    # reorder map to rank - bids
+    ordered_rank_bid = get_ordered_map_rank_bid(map_rank_bid)
+    bid_2_rank = calculate_ranks(ordered_rank_bid, len(hands_ranks), CARDS_J_STRENGHT)
+    #print(bid_2_rank)
+    #for k, v in bid_2_rank.items():
+    #    print(k, v)
+
+    #for bid, rank in get_hands().items():
+    #    total_winnings += rank * bid_2_rank[bid]
+
+    print("PART TWO total winnings:",  total_winnings)
 
 
 if __name__ == "__main__":
