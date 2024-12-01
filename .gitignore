@@ -1,0 +1,15 @@
+### Java ###
+# Compiled class file
+*.class
+
+### OSX ###
+# General
+.DS_Store
+.AppleDouble
+.LSOverride
+
+### VisualStudioCode ###
+.vscode/*
+!.vscode/tasks.json
+!.vscode/launch.json
+*.code-workspace
