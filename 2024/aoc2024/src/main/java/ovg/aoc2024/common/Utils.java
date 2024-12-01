@@ -16,12 +16,12 @@ public class Utils {
     }
 
     public static void printResult(String day, String result1, String result2) {
-        System.out.println("--");
+        System.out.println("\n--");
         System.out.println(day);
         System.out.println("--");
         System.out.println("part 1: " + result1);
         System.out.println("part 2: " + result2);
-        System.out.println("--");
+        System.out.println("--\n");
     }
 
 }
