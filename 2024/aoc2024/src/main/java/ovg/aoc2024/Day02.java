@@ -27,7 +27,7 @@ public class Day02 {
             }
         }
 
-        Utils.printResult("DAY 2", String.valueOf(result1), String.valueOf(result2));
+        Utils.printResult("Day 2: Red-Nosed Reports", String.valueOf(result1), String.valueOf(result2));
     }
 
     private static List<Integer> convertToReport(String row) {
