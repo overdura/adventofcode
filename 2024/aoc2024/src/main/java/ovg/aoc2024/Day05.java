@@ -2,7 +2,6 @@ package main.java.ovg.aoc2024;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
 import main.java.ovg.aoc2024.common.Utils;
