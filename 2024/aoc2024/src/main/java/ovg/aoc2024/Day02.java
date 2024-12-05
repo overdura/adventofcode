@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import main.java.ovg.aoc2024.common.Utils;
 
@@ -27,13 +28,14 @@ public class Day02 {
             }
         }
 
-        Utils.printResult("Day 2: Red-Nosed Reports", String.valueOf(result1), String.valueOf(result2));
+        Utils.printResult("--- Day 2: Red-Nosed Reports ---", String.valueOf(result1), String.valueOf(result2));
     }
 
     private static List<Integer> convertToReport(String row) {
-        return Arrays.stream(row.split(" "))
+        return Arrays.stream(row.split("\\s+"))
+                .filter(s -> !s.isEmpty())
                 .map(Integer::parseInt)
-                .toList();
+                .collect(Collectors.toList());
     }
 
     private static boolean isSafe(List<Integer> report) {

@@ -20,7 +20,7 @@ public class Day03 {
         int result1 = calculate(totalContent);
         int result2 = calculatePart2(totalContent);
 
-        Utils.printResult("Day 3: Mull It Over", String.valueOf(result1), String.valueOf(result2));
+        Utils.printResult("--- Day 3: Mull It Over ---", String.valueOf(result1), String.valueOf(result2));
     }
 
     private static int calculate(String content) {

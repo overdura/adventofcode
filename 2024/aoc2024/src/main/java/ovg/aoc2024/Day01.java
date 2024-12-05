@@ -40,7 +40,7 @@ public class Day01 {
             result2 += leftElement * countLeftInRight;
         }
 
-        Utils.printResult("Day 1: Historian Hysteria", String.valueOf(result1), String.valueOf(result2));
+        Utils.printResult("--- Day 1: Historian Hysteria ---", String.valueOf(result1), String.valueOf(result2));
     }
 
 }
