@@ -24,4 +24,15 @@ public class Utils {
         System.out.println("--\n");
     }
 
+    public static char[][] getMatrix(List<String> content) {
+        char[][] matrix = new char[content.size()][];
+
+        for (int i = 0; i < content.size(); i++) {
+            matrix[i] = content.get(i).toCharArray();
+
+        }
+
+        return matrix;
+    }
+
 }

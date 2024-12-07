@@ -17,7 +17,7 @@ public class Day04 {
         int result1 = calculateInLine(content);
         result1 += calculateInLine(transpose(content));
 
-        var matrix = getMatrix(content);
+        var matrix = Utils.getMatrix(content);
         result1 += calculateDiagonal(matrix);
 
         int result2 = calculateXMas(matrix);
@@ -68,17 +68,6 @@ public class Day04 {
         return columns.stream()
                 .map(StringBuilder::toString)
                 .collect(Collectors.toUnmodifiableList());
-    }
-
-    private static char[][] getMatrix(List<String> content) {
-        char[][] matrix = new char[content.size()][];
-
-        for (int i = 0; i < content.size(); i++) {
-            matrix[i] = content.get(i).toCharArray();
-
-        }
-
-        return matrix;
     }
 
     private static int calculateDiagonal(char[][] content) {
