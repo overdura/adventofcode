@@ -108,8 +108,6 @@ public class Day06 {
 
                 }
             }
-  
-
         }
 
         //printMatrix(steps);
