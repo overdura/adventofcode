@@ -17,7 +17,7 @@ public class Day11 {
         long end1 = System.currentTimeMillis();
 
         long ini2 = System.currentTimeMillis();
-        long result2 = 0; // calculateStonesByBlinkOptimized(stones, 75);
+        long result2 = calculateStonesByBlinkOptimized(stones, 75);
         long end2 = System.currentTimeMillis();
 
         System.out.println("\nt1 -> " + (end1 - ini1));
@@ -31,7 +31,6 @@ public class Day11 {
         for (int i = 0; i < blinks; i++) {
             result = transform(result);
         }
-        // System.out.println(result);
         return result.size();
     }
 
@@ -62,55 +61,37 @@ public class Day11 {
             result.put(stone, 1l);
         }
 
-        // System.out.println("\ninit"+result);
         for (int i = 0; i < blinks; i++) {
-            System.out.println("\n" + i);
             result = transformOptimized(result);
-            // System.out.println(result);
-
         }
-        // System.out.println("end" + result);
 
         return result.values().stream().mapToLong(Long::longValue).sum();
     }
 
     private static Map<Long, Long> transformOptimized(Map<Long, Long> stones) {
-
         Map<Long, Long> result = new HashMap<>();
-        Map<Long, List<Long>> cache = new HashMap<>();
 
         stones.forEach((stoneKey, count) -> {
-            // System.out.println(result);
-            // System.out.println("\nSTONE:" + stoneKey);
+            List<Long> transformations = new ArrayList<>();
+            if (stoneKey == 0L) {
+                transformations.add(1L);
+            } else if (stoneKey == 1L) {
+                transformations.add(2024L);
+            } else if (String.valueOf(stoneKey).length() % 2 == 0) {
+                String keyString = String.valueOf(stoneKey);
+                int middle = keyString.length() / 2;
+                long firstPart = Long.parseLong(keyString.substring(0, middle));
+                long secondPart = Long.parseLong(keyString.substring(middle));
+                transformations.add(firstPart);
+                transformations.add(secondPart);
+            } else {
+                transformations.add(2024L * stoneKey);
+            }
 
-            List<Long> transformedKeys = cache.computeIfAbsent(stoneKey, k -> {
-                List<Long> transformations = new ArrayList<>();
-
-                if (k == 0L) {
-                    transformations.add(1L);
-                } else if (k == 1L) {
-                    transformations.add(2024L);
-                } else if (String.valueOf(k).length() % 2 == 0) {
-                    String keyString = String.valueOf(k);
-                    int middle = keyString.length() / 2;
-                    long firstPart = Long.parseLong(keyString.substring(0, middle));
-                    long secondPart = Long.parseLong(keyString.substring(middle));
-                    transformations.add(firstPart);
-                    transformations.add(secondPart);
-                } else {
-                    transformations.add(2024L * k);
-                }
-                // System.out.println(stoneKey +" "+ transformations);
-
-                return transformations;
-            });
-
-            for (Long transformedKey : transformedKeys) {
-                // System.out.print("\n->>"+transformedKey + " " + result);
+            for (Long transformedKey : transformations) {
                 result.put(transformedKey, result.getOrDefault(transformedKey, 0L) + count);
             }
         });
-        // System.out.println("\n"+result);
         return result;
     }
 
