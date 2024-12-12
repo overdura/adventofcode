@@ -13,14 +13,14 @@ import main.java.ovg.aoc2024.common.Utils;
 public class Day11 {
     public static void main(String[] args) throws Exception {
         List<Long> stones = List.of(554735l, 45401l, 8434l, 0l, 188l, 7487525l, 77l, 7l);
-        //List<Long> stones = List.of(125l, 17l); // test
+        // List<Long> stones = List.of(125l, 17l); // test
 
         long ini1 = System.currentTimeMillis();
         long result1 = calculateStonesByBlink(stones, 25);
         long end1 = System.currentTimeMillis();
 
         long ini2 = System.currentTimeMillis();
-        long result2 = 0; //calculateStonesByBlinkOptimized(stones, 75);
+        long result2 = 0; // calculateStonesByBlinkOptimized(stones, 75);
         long end2 = System.currentTimeMillis();
 
         System.out.println("\nt1 -> " + (end1 - ini1));
